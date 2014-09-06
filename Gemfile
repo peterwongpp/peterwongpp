@@ -52,3 +52,6 @@ group :test, :development do
   gem 'database_cleaner', '~> 1.3.0'
   gem 'factory_girl_rails'
 end
+
+# Authentication and authorization
+gem 'omniauth'

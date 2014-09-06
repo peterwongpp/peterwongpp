@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  root 'static#homepage'
+
+  get '/auth/signout', to: 'sessions#destroy', as: :logout
+  get '/auth/:provider/callback', to: 'sessions#create'
+  post '/auth/:provider/callback', to: 'sessions#create' unless Rails.env.production?
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
