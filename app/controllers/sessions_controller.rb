@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
+  skip_before_filter :verify_authenticity_token, only: [:create, :destroy]
+
+  layout "frontend", only: [:new]
+
+  def new
+  end
 
   def create
     user_identity = UserIdentity.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) || UserIdentity.create_with_omniauth(auth_hash)

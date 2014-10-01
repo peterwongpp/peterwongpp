@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'frontend/posts#index'
 
-  get '/auth/signout', to: 'sessions#destroy', as: :logout
+  get '/sign_in', to: 'sessions#new', as: :sign_in
+  get '/auth/sign_out', to: 'sessions#destroy', as: :sign_out
   get '/auth/:provider/callback', to: 'sessions#create'
   post '/auth/:provider/callback', to: 'sessions#create' unless Rails.env.production?
 

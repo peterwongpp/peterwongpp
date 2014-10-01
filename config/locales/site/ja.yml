@@ -2,9 +2,12 @@ ja:
   site:
     title: "論盡蛋"
     subtitle: "心で書く"
+    greeting: "こんにちは！%{name}"
     copyright: "Copyright © PeterWong 2014"
   navigation:
     blog: "ブログ"
+    sign_in: "ログイン"
+    sign_out: "ログアウト"
   pagination:
     older: "&larr; Older"
     newer: "Newer &rarr;"

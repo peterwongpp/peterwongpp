@@ -21,7 +21,12 @@
 </head>
 <body>
   <div class="brand"><%= t("site.title") %></div>
-  <div class="address-bar"><%= t("site.subtitle") %></div>
+  <div class="address-bar">
+    <%= t("site.subtitle") %>
+    <%- if current_user %>
+      | <%= t("site.greeting", name: current_user.name) %>
+    <%- end %>
+  </div>
 
   <nav class="navbar navbar-default" role="navigation">
     <div class="container">
@@ -37,7 +42,12 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><%= link_to t("navigation.blog"), posts_path %></li>
-          <li><%= link_to t("navigation.sign_in"), "" %></li>
+
+          <%- if current_user %>
+            <li><%= link_to t("navigation.sign_out"), sign_out_path %></li>
+          <%- else %>
+            <li><%= link_to t("navigation.sign_in"), sign_in_path %></li>
+          <%- end %>
         </ul>
       </div>
     </div>
