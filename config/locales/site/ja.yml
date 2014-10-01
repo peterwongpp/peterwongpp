@@ -1,3 +1,10 @@
 ja:
   site:
     title: "論盡蛋"
+    subtitle: "心で書く"
+    copyright: "Copyright © PeterWong 2014"
+  navigation:
+    blog: "ブログ"
+  pagination:
+    older: "&larr; Older"
+    newer: "Newer &rarr;"

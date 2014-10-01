@@ -1,3 +1,10 @@
 zh:
   site:
     title: "論盡蛋"
+    subtitle: "心で書く"
+    copyright: "Copyright © PeterWong 2014"
+  navigation:
+    blog: "Blog"
+  pagination:
+    older: "&larr; Older"
+    newer: "Newer &rarr;"
