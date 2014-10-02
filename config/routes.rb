@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post '/auth/:provider/callback', to: 'sessions#create' unless Rails.env.production?
 
   scope module: 'frontend' do
-    resources :posts
+    resources :posts, only: [:index, :show]
   end
 
   # You can have the root of your site routed with "root"
