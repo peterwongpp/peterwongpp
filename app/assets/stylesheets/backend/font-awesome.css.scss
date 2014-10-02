@@ -1,0 +1,30 @@
+/*!
+ *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+
+@import "components-font-awesome/scss/variables";
+@import "components-font-awesome/scss/mixins";
+
+/* @import "components-font-awesome/scss/path"; */
+@font-face {
+  font-family: 'FontAwesome';
+  src: font-path('fontawesome-webfont.eot?v=#{$fa-version}');
+  src: font-path('fontawesome-webfont.eot?#iefix&v=#{$fa-version}') format('embedded-opentype'),
+    font-path('fontawesome-webfont.woff?v=#{$fa-version}') format('woff'),
+    font-path('fontawesome-webfont.ttf?v=#{$fa-version}') format('truetype'),
+    font-path('fontawesome-webfont.svg?v=#{$fa-version}#fontawesomeregular') format('svg');
+  //src: font-path('FontAwesome.otf') format('opentype'); // used when developing fonts
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "components-font-awesome/scss/core";
+@import "components-font-awesome/scss/larger";
+@import "components-font-awesome/scss/fixed-width";
+@import "components-font-awesome/scss/list";
+@import "components-font-awesome/scss/bordered-pulled";
+@import "components-font-awesome/scss/spinning";
+@import "components-font-awesome/scss/rotated-flipped";
+@import "components-font-awesome/scss/stacked";
+@import "components-font-awesome/scss/icons";

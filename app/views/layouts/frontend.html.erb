@@ -75,7 +75,7 @@
               <%= t("navigation.language") %>
               <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" role="menu">
+            <ul class="dropdown-menu">
               <%- enabled_locales.each do |locale| %>
                 <%= content_tag :li, class: (I18n.locale == locale ? "active" : nil) do %>
                   <%= link_to "#{t("locales.#{locale}")} #{t("locales.translated.#{locale}")}", params.merge(locale: locale) %>
@@ -101,6 +101,6 @@
   </footer>
 
   <%= render partial: "google_analytics" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "frontend" %>
 </body>
 </html>

@@ -24,8 +24,9 @@ module Peterwongpp
     config.i18n.available_locales = [:zh, :en, :ja]
     config.i18n.default_locale = :zh
 
-    # For loading bootstrap fonts
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")
+    # For fonts
+    config.assets.paths << Rails.root.join("vendor", "assets", "bower_components", "bootstrap-sass-official", "assets", "fonts")
+    config.assets.paths << Rails.root.join("vendor", "assets", "bower_components", "components-font-awesome", "fonts")
     config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff)$)
 
     # General assets
@@ -35,6 +36,9 @@ module Peterwongpp
     Rails.application.config.assets.precompile += %w(
       frontend.css
       backend.css
+
+      frontend.js
+      backend.js
     )
   end
 end
