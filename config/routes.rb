@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
+  get '*unmatched_route', to: 'frontend#raise_not_found!'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
