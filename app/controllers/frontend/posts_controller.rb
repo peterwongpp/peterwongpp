@@ -5,4 +5,9 @@ class Frontend::PostsController < FrontendController
     @posts = @posts.tagged_with(params[:tag], on: :tags) if params[:tag]
     respond_with @posts
   end
+
+  def show
+    @post = Post.where("published_at IS NOT NULL").find_by_slug!(params[:id])
+    respond_with @post
+  end
 end
