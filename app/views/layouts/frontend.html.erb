@@ -54,6 +54,13 @@
                 <span class="glyphicon glyphicon-lock"></span> <%= t("navigation.sign_out") %>
               <%- end %>
             </li>
+            <%- if current_user.admin? %>
+              <li>
+                <%= link_to backend_root_path do %>
+                  <span class="glyphicon glyphicon-warning-sign"></span> Admin
+                <%- end %>
+              </li>
+            <%- end %>
           <%- else %>
             <li>
               <%= link_to sign_in_path do %>

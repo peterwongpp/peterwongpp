@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
+  namespace "backend" do
+    root to: 'static#dashboard'
+  end
+
   get '*unmatched_route', to: 'frontend#raise_not_found!'
 
   # You can have the root of your site routed with "root"
