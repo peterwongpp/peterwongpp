@@ -55,9 +55,10 @@ end
 
 # Authentication and authorization
 gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'nokogiri'
 gem 'redcarpet'
 gem 'http_accept_language'
-gem 'kaminari'
 gem 'acts-as-taggable-on'
