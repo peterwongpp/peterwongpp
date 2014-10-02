@@ -31,26 +31,7 @@
           </div>
         <%- end %>
 
-        <%= link_to "/auth/facebook", class: "btn btn-lg btn-block btn-default" do %>
-          <div class="row">
-            <div class="col-xs-2 text-right">
-              <%= image_tag "logos/facebook_24_24.png", alt: "" %>
-            </div>
-            <div class="col-xs-10 text-left">
-              Sign in with Facebook
-            </div>
-          </div>
-        <%- end %>
-        <%= link_to "/auth/twitter", class: "btn btn-lg btn-block btn-default" do %>
-          <div class="row">
-            <div class="col-xs-2 text-right">
-              <%= image_tag "logos/twitter_24_24.png", alt: "" %>
-            </div>
-            <div class="col-xs-10 text-left">
-              Sign in with Twitter
-            </div>
-          </div>
-        <%- end %>
+        <%= oauth_button("facebook", "Facebook") %>
       </div>
     </div>
   </div>

@@ -18,4 +18,17 @@ module ApplicationHelper
       favicon_link_tag('/favicon.ico', :rel => 'shortcut icon')
     ].join.html_safe
   end
+
+  def oauth_button(oauth_provider, oauth_provider_name)
+    link_to "/auth/#{oauth_provider}", class: "btn btn-lg btn-block btn-default" do
+      content_tag :div, class: "row" do
+        content_tag(:div, class: "col-xs-2 text-right") do
+          image_tag "logos/#{oauth_provider}_24_24.png", alt: ""
+        end +
+        content_tag(:div, class: "col-xs-10 text-left") do
+          "Sign in with #{oauth_provider_name}"
+        end
+      end
+    end
+  end
 end
