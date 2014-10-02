@@ -58,5 +58,6 @@ gem 'omniauth'
 
 gem 'nokogiri'
 gem 'redcarpet'
+gem 'http_accept_language'
 gem 'kaminari'
 gem 'acts-as-taggable-on'

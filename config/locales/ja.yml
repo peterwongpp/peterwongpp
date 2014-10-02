@@ -193,3 +193,11 @@ ja:
       short: ! '%y/%m/%d %H:%M'
       publish_date: ! '%Y年%m月%d日（%a）'
     pm: 午後
+  locales:
+    en: "English"
+    zh: "中文"
+    ja: "日本語"
+    translated:
+      en: "英語"
+      zh: "中国語"
+      ja: "日本語"

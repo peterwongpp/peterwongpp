@@ -203,3 +203,11 @@ en:
       short: ! '%d %b %H:%M'
       publish_date: ! '%Y-%m-%d (%a)'
     pm: pm
+  locales:
+    en: "English"
+    zh: "中文"
+    ja: "日本語"
+    translated:
+      en: "English"
+      zh: "Chinese"
+      ja: "Japanese"

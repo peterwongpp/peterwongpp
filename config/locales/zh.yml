@@ -203,3 +203,11 @@ zh:
       short: ! '%b%d日 %H:%M'
       publish_date: ! '%Y年%m月%d日（%a）'
     pm: 下午
+  locales:
+    en: "English"
+    zh: "中文"
+    ja: "日本語"
+    translated:
+      en: "英文"
+      zh: "中文"
+      ja: "日文"

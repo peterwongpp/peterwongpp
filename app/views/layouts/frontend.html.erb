@@ -41,13 +41,40 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><%= link_to t("navigation.blog"), posts_path %></li>
+          <li>
+            <%= link_to posts_path do %>
+              <span class="glyphicon glyphicon-book"></span> <%= t("navigation.blog") %>
+            <%- end %>
+          </li>
 
           <%- if current_user %>
-            <li><%= link_to t("navigation.sign_out"), sign_out_path %></li>
+            <li>
+              <%= link_to sign_out_path do %>
+                <span class="glyphicon glyphicon-lock"></span> <%= t("navigation.sign_out") %>
+              <%- end %>
+            </li>
           <%- else %>
-            <li><%= link_to t("navigation.sign_in"), sign_in_path %></li>
+            <li>
+              <%= link_to sign_in_path do %>
+                <span class="glyphicon glyphicon-lock"></span> <%= t("navigation.sign_in") %>
+              <%- end %>
+            </li>
           <%- end %>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle fake-link" data-toggle="dropdown">
+              <span class="glyphicon glyphicon-globe"></span>
+              <%= t("navigation.language") %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <%- enabled_locales.each do |locale| %>
+                <%= content_tag :li, class: (I18n.locale == locale ? "active" : nil) do %>
+                  <%= link_to "#{t("locales.#{locale}")} #{t("locales.translated.#{locale}")}", params.merge(locale: locale) %>
+                <%- end %>
+              <%- end %>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
