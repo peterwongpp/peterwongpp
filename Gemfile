@@ -55,3 +55,8 @@ end
 
 # Authentication and authorization
 gem 'omniauth'
+
+gem 'nokogiri'
+gem 'redcarpet'
+gem 'kaminari'
+gem 'acts-as-taggable-on'

@@ -8,6 +8,3 @@ en:
     blog: "Blog"
     sign_in: "Sign in"
     sign_out: "Sign out"
-  pagination:
-    older: "&larr; Older"
-    newer: "Newer &rarr;"
