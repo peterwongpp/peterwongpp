@@ -143,6 +143,11 @@
                 <i class="fa fa-dashboard fa-fw"></i> Dashboard
               <%- end %>
             </li>
+            <li>
+              <%= link_to backend_users_path, class: active_class(controller_name: "backend/users") do %>
+                <i class="fa fa-users fa-fw"></i> Users
+              <%- end %>
+            </li>
           </ul>
         </div>
       </div>

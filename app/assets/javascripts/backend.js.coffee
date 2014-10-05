@@ -12,6 +12,7 @@
 #= require backend/plugins/morris/raphael.min
 #= require backend/plugins/morris/morris
 #= require backend/sb-admin-2
+#= require backend/datatables-binding
 #= require_self
 
 # Example JS for using flot and morris
