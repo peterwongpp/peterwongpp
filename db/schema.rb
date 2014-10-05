@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(version: 20141001191935) do
     t.integer  "user_id"
     t.string   "slug"
     t.string   "title"
-    t.text     "raw_content",  limit: 4294967295
-    t.text     "content",      limit: 4294967295
+    t.text     "raw_content",  limit: 1073741823
+    t.text     "content",      limit: 1073741823
     t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
