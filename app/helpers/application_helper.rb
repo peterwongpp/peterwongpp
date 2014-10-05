@@ -31,4 +31,22 @@ module ApplicationHelper
       end
     end
   end
+
+  def active_class(options)
+    active_class_name = options[:active_class_name] || "active"
+    inactive_class_name = options[:inactive_class_name] || nil
+
+    is_active = if options[:path]
+      current_page?(options[:path])
+    elsif options[:controller_name] || options[:action_name]
+      is_active = false
+      is_active = options[:controller_name] ? params[:controller] == options[:controller_name] : is_active
+      is_active = options[:action_name] ? params[:action] == options[:action_name] : is_active
+      is_active
+    else
+      false
+    end
+
+    is_active ? active_class_name : inactive_class_name
+  end
 end
