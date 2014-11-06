@@ -49,4 +49,14 @@ module ApplicationHelper
 
     is_active ? active_class_name : inactive_class_name
   end
+
+  def locale_changing_tag(locale)
+    link_to params.merge(locale: locale) do
+      [
+        t("locales.translated.#{locale}"),
+        "-",
+        content_tag(:small, t("locales.#{locale}"))
+      ].join(" ").html_safe
+    end
+  end
 end

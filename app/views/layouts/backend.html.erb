@@ -128,7 +128,7 @@
             <ul class="dropdown-menu">
               <%- enabled_locales.each do |locale| %>
                 <%= content_tag :li, class: (I18n.locale == locale ? "active" : nil) do %>
-                  <%= link_to "#{t("locales.#{locale}")} #{t("locales.translated.#{locale}")}", params.merge(locale: locale) %>
+                  <%= locale_changing_tag(locale) %>
                 <%- end %>
               <%- end %>
             </ul>
