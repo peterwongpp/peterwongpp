@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     root to: 'static#dashboard'
     resources :users, only: [:index] do
       collection do
-        get :tablize
+        get :tablized
       end
     end
   end

@@ -48,6 +48,11 @@ gem 'pry-rails', group: :development
 # https://github.com/amatsuda/kaminari
 gem 'kaminari'
 
+# https://github.com/nesquena/rabl
+gem 'rabl'
+# JSON parser used by rabl.
+gem 'oj'
+
 # Rspec for rails
 group :test, :development do
   gem 'rspec-rails', '~> 3.0.0'
