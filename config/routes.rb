@@ -20,6 +20,11 @@ Rails.application.routes.draw do
         get :tablized
       end
     end
+    resources :posts, only: [:index] do
+      collection do
+        get :tablized
+      end
+    end
   end
 
   get '*unmatched_route', to: 'frontend#raise_not_found!'

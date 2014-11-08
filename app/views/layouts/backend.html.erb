@@ -148,6 +148,11 @@
                 <i class="fa fa-users fa-fw"></i> Users
               <%- end %>
             </li>
+            <li>
+              <%= link_to backend_posts_path, class: active_class(controller_name: "backend/posts") do %>
+                <i class="fa fa-edit fa-fw"></i> Posts
+              <%- end %>
+            </li>
           </ul>
         </div>
       </div>
