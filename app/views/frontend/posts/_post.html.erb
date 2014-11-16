@@ -1,0 +1,22 @@
+<div class="col-lg-12 text-center post">
+  <div class="post-header">
+    <h2><%= link_to post.title, post_path(post.slug) %></h2>
+  </div>
+
+  <div class="post-body text-left">
+    <div class="col-lg-9">
+      <%= post.content.html_safe %>
+    </div>
+
+    <div class="col-lg-3">
+      <ul class="list-group">
+        <li class="list-group-item"><span class="glyphicon glyphicon-user"></span> <%= post.user.try(:name) %></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-folder-open"></span> <%= post_categories_list(post) %></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-tags"></span> <%= post_tags_list(post) %></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-calendar"></span> <%= l(post.published_at, format: :publish_date) %></li>
+        <li class="list-group-item"><span class="glyphicon glyphicon-comment"></span> <%= link_to "Comment", "#{post_url(post.slug)}#disqus_thread", data: { "disqus-identifier" => post.slug } %></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+</div>

@@ -1,29 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="box">
-      <%- post = @post %>
-      <div class="col-lg-12 text-center">
-        <div class="post-header">
-          <h2><%= link_to post.title, post_path(post.slug) %></h2>
-
-          <span class="glyphicon glyphicon-user"></span> <%= post.user.try(:name) %> |
-          <span class="glyphicon glyphicon-folder-open"></span> <%= post_categories_list(post) %> |
-          <span class="glyphicon glyphicon-tags"></span> <%= post_tags_list(post) %> |
-          <span class="glyphicon glyphicon-calendar"></span> <%= l(post.published_at, format: :publish_date) %> |
-          <span class="glyphicon glyphicon-comment"></span> <%= link_to "Comment", "#{post_url(post.slug)}#disqus_thread", data: { "disqus-identifier" => post.slug } %>
-        </div>
-
-        <div class="post-body text-left">
-          <%= post.content.html_safe %>
-        </div>
-        <hr>
-      </div>
+      <%= render partial: "post", object: @post %>
 
       <div class="col-lg-12 text-center">
         <%= render partial: "disqus_comments", locals: {
-          identifier: post.slug,
-          title: post.title,
-          url: post_url(post.slug)
+          identifier: @post.slug,
+          title: @post.title,
+          url: post_url(@post.slug)
         } %>
       </div>
     </div>
