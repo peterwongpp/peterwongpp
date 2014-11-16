@@ -1,11 +1,8 @@
 class Backend::PostsController < BackendController
-  respond_to :json, only: :tablized
-
   def index
-  end
+    @posts = Post.all
 
-  def tablized
-    @draw, @records, @total_count, @filtered_count = datatablize Post.includes(:user, :tags, :categories)
-    render :tablized
+    @posts = @posts.page(params[:page])
+    @posts = @posts.per(params[:per])
   end
 end

@@ -1,11 +1,8 @@
 class Backend::UsersController < BackendController
-  respond_to :json, only: :tablized
-
   def index
-  end
+    @users = User.all
 
-  def tablized
-    @draw, @records, @total_count, @filtered_count = datatablize User.includes(:user_identities)
-    render :tablized
+    @users = @users.page(params[:page])
+    @users = @users.per(params[:per])
   end
 end

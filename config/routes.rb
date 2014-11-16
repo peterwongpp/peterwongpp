@@ -15,16 +15,8 @@ Rails.application.routes.draw do
 
   namespace "backend" do
     root to: 'static#dashboard'
-    resources :users, only: [:index] do
-      collection do
-        get :tablized
-      end
-    end
-    resources :posts, only: [:index] do
-      collection do
-        get :tablized
-      end
-    end
+    resources :users, only: [:index]
+    resources :posts, only: [:index]
   end
 
   get '*unmatched_route', to: 'frontend#raise_not_found!'
