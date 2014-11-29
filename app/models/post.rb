@@ -2,8 +2,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   acts_as_taggable_on :tags, :categories
 
-  scope :search, ->(search_value) { where("title LIKE :q", q: "%#{search_value}%") }
-
   before_create :generate_slug
   before_save :convert_content
 
